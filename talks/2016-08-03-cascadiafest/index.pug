@@ -6,9 +6,15 @@ html
 	body
 		.reveal
 			.slides
-				section
-					h2 Arbitrary Computation on the GPU with ❤WebGL 
-					h3 Seth Samuel (NY ↝ PDX ↝ Elsewhere ↝ PDX ↝ NYC)
+				//- section
+				//- 	h2 Arbitrary Computation on the GPU with ❤WebGL 
+				//- 	h3 Seth Samuel (NY ↝ PDX ↝ Elsewhere ↝ PDX ↝ NYC)
 				section
 					h1 What is WebGL?
+				section
+					h3 Simple Gradient
+					pre
+						code(class='glsl') gl_FragColor = vec4(vCoord.s, vCoord.t, 0, 1.0);
+				section
+					iframe(data-src='./gradient.html', width=512, height=512)
 

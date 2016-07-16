@@ -59,7 +59,7 @@ module.exports = {
 			{
 				test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
 				loader: "url?limit=10000&mimetype=image/svg+xml"
-			},	
+			},
 		]
 	},
 	devServer: {
@@ -68,7 +68,8 @@ module.exports = {
 		hot: true,
 		inline: true,
 		port: PORT,
-		host: HOST
+		host: HOST,
+		headers: {Pragma: 'no-cache', Expires: 0, 'Cache-Control': 'no-cache, no-store, must-revalidate'}
 		},
 	plugins: [
 		new webpack.NoErrorsPlugin(),
