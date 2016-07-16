@@ -6,10 +6,15 @@ var highlightJs = require('highlight.js');
 var highlightJsCss = require('highlight.js/styles/default.css');
 
 Reveal.initialize({
-	viewDistance: 1	
+	viewDistance: 1
 });
 
 Reveal.addEventListener('ready', () => {
 	highlightJs.initHighlightingOnLoad();
 });
+
+Reveal.addEventListener('slidechanged', (event) => {
+	location.hash = `#/${event.indexh}/${event.indexv}`;
+});
+
 console.log('❤');
