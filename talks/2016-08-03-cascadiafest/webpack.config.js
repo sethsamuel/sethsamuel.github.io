@@ -10,11 +10,11 @@ const PORT = process.env.PORT || "8888";
 var pages = ['index', 'matrix', 'gradient'];
 
 function entryPoint(entry) {
-	return [
+	return ((process.env.NODE_ENV !== 'production') ? [
 		`webpack-dev-server/client?http://${HOST}:${PORT}`, // WebpackDevServer host and port
-		`webpack/hot/only-dev-server`,
-		`./js/${entry}.js`,
-	];
+		`webpack/hot/only-dev-server`
+		] : [])
+		.concat([`./js/${entry}.js`]);
 }
 
 module.exports = {
@@ -71,10 +71,8 @@ module.exports = {
 		host: HOST,
 		headers: {Pragma: 'no-cache', Expires: 0, 'Cache-Control': 'no-cache, no-store, must-revalidate'}
 		},
-	plugins: [
-		new webpack.NoErrorsPlugin(),
-		new webpack.HotModuleReplacementPlugin(),
-	].concat(_.map(pages, (page) => {
+	plugins: ((process.env.NODE_ENV !== 'production') ? [new webpack.NoErrorsPlugin(), new webpack.HotModuleReplacementPlugin()] : [])
+	.concat(_.map(pages, (page) => {
 		return new HtmlWebpackPlugin({
 			chunks: [`${page}`],
 			template: `${page}.pug`,
