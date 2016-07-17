@@ -6,6 +6,8 @@ var highlightJs = require('highlight.js');
 var highlightJsCss = require('highlight.js/styles/default.css');
 highlightJs.initHighlightingOnLoad();
 
+require('../css/index.css');
+
 Reveal.initialize({
 	viewDistance: 1
 });

@@ -1,6 +1,7 @@
 "use strict";
 var webpack = require('webpack');
 var path = require('path');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var _ = require('lodash');
 
@@ -8,6 +9,20 @@ const HOST = process.env.HOST || "0.0.0.0";
 const PORT = process.env.PORT || "8888";
 
 var pages = ['index', 'matrix', 'gradient'];
+
+var plugins = [new CopyWebpackPlugin([{from: 'images/*'}])];
+if(process.env.NODE_ENV !== 'production') {
+	plugins = plugins.concat([new webpack.NoErrorsPlugin(), new webpack.HotModuleReplacementPlugin()]);
+} else {
+	plugins = plugins.concat(_.map(pages, (page) => {
+			return new HtmlWebpackPlugin({
+				chunks: [`${page}`],
+				template: `${page}.pug`,
+				filename: `${page}.html`
+			});
+		})
+	);
+}
 
 function entryPoint(entry) {
 	return ((process.env.NODE_ENV !== 'production') ? [
@@ -71,12 +86,5 @@ module.exports = {
 		host: HOST,
 		headers: {Pragma: 'no-cache', Expires: 0, 'Cache-Control': 'no-cache, no-store, must-revalidate'}
 		},
-	plugins: ((process.env.NODE_ENV !== 'production') ? [new webpack.NoErrorsPlugin(), new webpack.HotModuleReplacementPlugin()] : [])
-	.concat(_.map(pages, (page) => {
-		return new HtmlWebpackPlugin({
-			chunks: [`${page}`],
-			template: `${page}.pug`,
-			filename: `${page}.html`
-		});
-	}))
+	plugins
 };
