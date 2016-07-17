@@ -1,6 +1,7 @@
 .reveal section img {
 	background: transparent;
 	border: none;
+	box-shadow: none;
 }
 
 .reveal section .img {	
@@ -9,4 +10,19 @@
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
+}
+
+.reveal pre code {
+	text-transform: initial !important;
+}
+
+.reveal a.contact {
+	display: block;
+}
+
+.reveal a.contact img {
+	display: inline-block;
+	width: 1em;
+	vertical-align: middle;
+	margin-right: .5em;
 }

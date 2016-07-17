@@ -12,6 +12,8 @@ html
 				section
 					h1 What is WebGL?
 				section
+					img(src='images/webgl-architecture.svg')
+				section
 					h3 Shaders
 					img(src='images/shader-pipeline.svg')
 				section
@@ -51,3 +53,89 @@ html
 							| );
 				section
 					iframe(data-src='./particles.html', width=512, height=512)
+				section
+					h1 Why so powerful?
+				section
+					h1 CPU v GPU
+				section
+					h1 OpenCL
+				section
+					h1 OpenGL:WebGL::OpenCL:?
+				section
+					h1 WebCL: Coming Soon(™)
+				section
+					h1 Compute Shaders: Coming Soon(™)
+				section
+					h1 How could we get data out of WebGL?
+				section
+					img(src='images/aliens_pixels.jpg')
+				section
+					h1
+						pre
+							code(class='js') canvas.getImageData
+				section
+					h2 Implementation Challenges
+					img(src='images/challenges.jpg')
+				section
+					h1 The high cost of serialization
+				section 
+					h3 Matrix Muliplication
+					pre
+						code
+							| Um...
+				section
+					iframe(data-src='./matrix.html', width=512, height=512)
+				section
+					h1 Potential Applications
+				section
+					h2 Hash collision
+				section
+					h2 Bitcoin mining
+				section
+					h2 Media encoding
+				section
+					h2 Machine learning
+				section
+					h2 Signal analysis/processing
+				section
+					h2 Protein folding
+				section
+					h1 Actual Applications
+				section
+					h2 
+						strike Hash collision
+				section
+					h2 
+						strike Bitcoin mining
+				section
+					h2 
+						strike Media encoding
+				section
+					h2 Machine learning?
+				section
+					h2 Signal analysis/processing?
+				section
+					h2 Protein folding?
+				section
+					h2 Application Challenges
+					img(src='images/more_challenges.jpg')
+				section
+					h2 No bit operations
+				section
+					h2 Unresponsive window
+				section
+					h2 OS level timeouts
+				section
+					h1 What do we need to make it work?
+				section
+					h2 Newer shader glsl version (1.3)
+				section
+					h2 Canvas/WebGL in web worker
+				section
+					h1 Thanks!
+					a.contact(href='http://twitter.com/sethfsamuel')
+						img(src='images/twit.png')
+						| @sethfsamuel
+					a.contact(href='http://github.com/sethsamuel')
+						img(src='images/github.png')
+						| sethsamuel
