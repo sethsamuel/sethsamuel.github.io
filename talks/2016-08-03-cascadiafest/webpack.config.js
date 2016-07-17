@@ -8,21 +8,22 @@ var _ = require('lodash');
 const HOST = process.env.HOST || "0.0.0.0";
 const PORT = process.env.PORT || "8888";
 
-var pages = ['index', 'matrix', 'gradient'];
+var pages = ['index', 'matrix', 'gradient', 'edgefinder'];
 
-var plugins = [new CopyWebpackPlugin([{from: 'images/*'}])];
+var plugins = [];
 if(process.env.NODE_ENV !== 'production') {
 	plugins = plugins.concat([new webpack.NoErrorsPlugin(), new webpack.HotModuleReplacementPlugin()]);
-} else {
-	plugins = plugins.concat(_.map(pages, (page) => {
-			return new HtmlWebpackPlugin({
-				chunks: [`${page}`],
-				template: `${page}.pug`,
-				filename: `${page}.html`
-			});
-		})
-	);
 }
+plugins = plugins.concat(new CopyWebpackPlugin([{from: 'images/*'}]));
+plugins = plugins.concat(_.map(pages, (page) => {
+		return new HtmlWebpackPlugin({
+			chunks: [`${page}`],
+			template: `${page}.pug`,
+			filename: `${page}.html`
+		});
+	})
+);
+
 
 function entryPoint(entry) {
 	return ((process.env.NODE_ENV !== 'production') ? [

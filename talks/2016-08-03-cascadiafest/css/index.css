@@ -2,3 +2,11 @@
 	background: transparent;
 	border: none;
 }
+
+.reveal section .img {	
+	width: 100%;
+	padding-top: 50%;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
