@@ -39,3 +39,15 @@ html
 					.img(style='background-image:url(images/edgefinder.jpg);')
 				section
 					iframe(data-src='./edgefinder.html', width=512, height=512)
+				section
+					h3 Particles
+					pre
+						code(class='glsl')
+							| gl_Position = vec4(
+							|   sin(vPosition.x+uThreshold*6.28*vPosition.z*vPosition.z), 
+							|   cos(vPosition.y+uThreshold*6.28*vPosition.z), 
+							|   vPosition.z,
+							|   1.0
+							| );
+				section
+					iframe(data-src='./particles.html', width=512, height=512)

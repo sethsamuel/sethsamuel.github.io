@@ -8,7 +8,7 @@ var _ = require('lodash');
 const HOST = process.env.HOST || "0.0.0.0";
 const PORT = process.env.PORT || "8888";
 
-var pages = ['index', 'matrix', 'gradient', 'edgefinder'];
+var pages = ['index', 'matrix', 'gradient', 'edgefinder', 'particles'];
 
 var plugins = [];
 if(process.env.NODE_ENV !== 'production') {
