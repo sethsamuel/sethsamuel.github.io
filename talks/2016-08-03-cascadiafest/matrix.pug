@@ -2,4 +2,25 @@ html
 	head
 		title Matrix Multiplication Demo
 	body
-		h1 Matrix!
+		#root
+			.params
+				input.size(type='range', min=3, max=1024, value=3)
+				input.size-value(type='text')
+			.inputs
+				.input-left
+				.times &middot;
+				.input-right
+			.buttons
+				.button
+					button.go-cpu Go CPU
+				.spinner
+				.button
+					button.go-gpu Go GPU
+			.timers
+				.cpu-time &nbsp;
+				.gpu-time &nbsp;
+			.results
+				.cpu-result.matrix
+				.equals ?
+				.gpu-result.matrix
+		canvas
