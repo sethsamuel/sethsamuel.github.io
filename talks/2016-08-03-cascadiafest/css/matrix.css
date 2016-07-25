@@ -24,7 +24,7 @@ body {
 }
 
 .params { 
-	margin: 1rem 3rem;
+	margin: 1rem 3rem 0;
 }
 
 .params .size {
@@ -41,8 +41,13 @@ body {
 	margin-left: 1em;
 }
 
+.inputs { 
+	justify-content: center;
+}
+
 .times {
 	font-size: 48px;
+	margin: 0 1em;
 }
 
 .button {
@@ -93,6 +98,7 @@ body {
 	border: 2px solid #333;
 }
 
+
 button {
 	border: none;
 	outline: none;
@@ -106,6 +112,11 @@ button:disabled {
 	background: #ccc;
 }
 
+.results {
+	margin-bottom: 1rem;
+}
+
 canvas {
 	display: none;
+	position: absolute;
 }

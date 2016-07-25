@@ -81,10 +81,31 @@ html
 				section 
 					h3 Matrix Muliplication
 					pre
-						code
-							| Um...
+						code(class='glsl')
+							| float sum = 0.0;
+							| for(int i = 0; i < size; i++) {
+							|   vec4 cLeft  = texture2D(uSamplerLeft, vec2(i, vCoord.t));
+							|   vec4 cRight = texture2D(uSamplerRight, vec2(vCoord.s, i));
+							|   sum = sum + (cLeft * cRight);
+							| }
 				section
 					iframe(data-src='./matrix.html', width=920, height=640)
+				section
+					h1 Why?
+				section
+					h1(style='text-transform:none;') O(n) < O(n<sup>2</sup>) < O(n<sup>3</sup>)
+				section
+					h2(style='text-transform:none;') n ∈ [0, 5]
+					img(style='width:70%;')(src='images/on_1.png')
+				section
+					h2(style='text-transform:none;') n ∈ [0, 10]
+					img(style='width:70%;')(src='images/on_2.png')
+				section
+					h2(style='text-transform:none;') n ∈ [0, 100]
+					img(style='width:70%;')(src='images/on_3.png')
+				section
+					h2(style='text-transform:none;') n ∈ [0, 1024]
+					img(style='width:70%;')(src='images/on_4.png')
 				section
 					h1 Potential Applications
 				section
