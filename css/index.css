@@ -22,11 +22,29 @@ body > :first-child {
 	flex: 1;
 	padding: 1rem;
 	overflow: auto;
+	flex-direction: row;
+}
+
+.content {
+	display: flex;
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+body > :first-child > .content {
+	flex-direction: column;
 }
 
 h1{
 	margin: 0;
 	margin-bottom: 2rem;
+	font-size: 4rem;
+}
+
+@media (max-width:480px) {
+	h1 {
+		font-size: 2rem;
+	}
 }
 
 .talk {
@@ -40,11 +58,23 @@ h1{
 	pointer-events: none;
 }
 
+.talk:hover {
+	text-decoration: underline;
+}
+
 footer {
 	background: #4D658D;
 	display: flex;
-	justify-content: space-between;
 	padding: .5rem;
+	flex-direction: row;
+	justify-content: center;	
+}
+
+footer .content {
+	display: flex;
+	flex-direction: row;	
+	justify-content: space-between;
+	flex: 1;
 }
 
 a.contact {
