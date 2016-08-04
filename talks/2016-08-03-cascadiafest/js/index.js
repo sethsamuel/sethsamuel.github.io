@@ -26,7 +26,7 @@ Reveal.addEventListener('slidechanged', (event) => {
 });
 
 function updateFooter(currentSlide) {
-	if (currentSlide === 0 || currentSlide === slideCount) {
+	if (currentSlide === 0 || currentSlide === (slideCount - 1)) {
 		document.querySelector('footer').classList.remove('visible');
 	} else {
 		document.querySelector('footer').classList.add('visible');
