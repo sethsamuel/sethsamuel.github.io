@@ -26,3 +26,18 @@
 	vertical-align: middle;
 	margin-right: .5em;
 }
+
+footer {
+	position: absolute;
+	text-align: right;
+	font-size: 1em;
+	bottom: .5em;
+	left: .5em;
+	opacity: 0;
+	color: white;
+	transition: opacity 0.5s ease;
+}
+
+footer.visible {
+	opacity: 0.8;
+}

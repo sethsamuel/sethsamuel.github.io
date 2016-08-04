@@ -12,11 +12,25 @@ Reveal.initialize({
 	viewDistance: 2
 });
 
-Reveal.addEventListener('ready', () => {
+
+var slideCount;
+Reveal.addEventListener('ready', (event) => {
+	slideCount = document.querySelectorAll('section').length;
+	updateFooter(event.indexh);
 });
+
 
 Reveal.addEventListener('slidechanged', (event) => {
 	location.hash = `#/${event.indexh}/${event.indexv}`;
+	updateFooter(event.indexh);
 });
+
+function updateFooter(currentSlide) {
+	if (currentSlide === 0 || currentSlide === slideCount) {
+		document.querySelector('footer').classList.remove('visible');
+	} else {
+		document.querySelector('footer').classList.add('visible');
+	}
+}
 
 console.log('❤');
