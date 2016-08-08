@@ -1,0 +1,43 @@
+.reveal section img {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+.reveal section .img {	
+	width: 100%;
+	padding-top: 50%;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.reveal pre code {
+	text-transform: initial !important;
+}
+
+.reveal a.contact {
+	display: block;
+}
+
+.reveal a.contact img {
+	display: inline-block;
+	width: 1em;
+	vertical-align: middle;
+	margin-right: .5em;
+}
+
+footer {
+	position: absolute;
+	text-align: right;
+	font-size: 1em;
+	bottom: .5em;
+	left: .5em;
+	opacity: 0;
+	color: white;
+	transition: opacity 0.5s ease;
+}
+
+footer.visible {
+	opacity: 0.8;
+}
