@@ -2,3 +2,7 @@ html, body {
 	padding: 0;
 	margin: 0;
 }
+
+.highlight {
+	background-color: rgba(200, 255, 0, 0.5);
+}

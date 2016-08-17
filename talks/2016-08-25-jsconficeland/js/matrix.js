@@ -4,11 +4,12 @@ import '../css/matrix.css';
 console.log('import?');
 console.log('MATRIX DEMO');
 
-let size = 3;
+let size = 1024;
 let inputLeft = [];
 let inputRight = [];
 let resultCpu = [];
 let resultGpu = [];
+let highlight = [0,0];
 
 const inputLeftView = new MatrixView({el: document.querySelector('.input-left')});
 const inputRightView = new MatrixView({el: document.querySelector('.input-right')});
@@ -35,6 +36,8 @@ const generateMatrices = () => {
 
 	document.querySelector('.cpu-time').innerHTML = '&nbsp';
 	document.querySelector('.gpu-time').innerHTML = '&nbsp';
+
+	highlight = [0,0];
 }
 
 document.querySelector('.size-value').value = document.querySelector('.size').value = size;
@@ -51,11 +54,39 @@ document.querySelector('.size-value').addEventListener('change', (e) => {
 
 generateMatrices();
 
-document.body.addEventListener('keypress', (e) => {
+document.body.addEventListener('keydown', (e) => {
 	if(e.key === 'r') {
 		generateMatrices();
+	} else if (e.key === 'ArrowUp') {
+		highlight[0] = Math.max(0, highlight[0] - 1);
+	} else if (e.key === 'ArrowLeft') {
+		highlight[1] = Math.max(0, highlight[1] - 1);
+	} else if (e.key === 'ArrowDown') {
+		highlight[0] = Math.min(size - 1, highlight[0] + 1);
+	} else if (e.key === 'ArrowRight') {
+		highlight[1] = Math.min(size - 1, highlight[1] + 1);
 	}
+	updateHighlights();
 });
+
+
+const updateHighlights = () => {
+	inputLeftView.highlightRow = highlight[0];
+	inputRightView.highlightCol = highlight[1];
+	cpuResult.highlightCell = highlight;
+	gpuResult.highlightCell = highlight;
+	inputLeftView.rowOffset =
+		inputRightView.rowOffset =
+		cpuResult.rowOffset =
+		gpuResult.rowOffset = Math.max(0, highlight[0] - (inputLeftView.width - 1));
+	inputLeftView.colOffset =
+		inputRightView.colOffset =
+		cpuResult.colOffset =
+		gpuResult.colOffset = Math.max(0, highlight[1] - (inputLeftView.width - 1));
+}
+
+updateHighlights();
+
 
 const offsetForPoint = (point) => {
 	// return 4 * (point[1] * size + point[0]);

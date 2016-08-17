@@ -9,7 +9,7 @@ console.log('PARTICLES');
 	let vPosition;
 	let uTime;
 
-	const particleCount = 50000;
+	var particleCount = 1;
 
 	gl.clearColor(0,0,0,1);
 	gl.clear(gl.COLOR_BUFFER_BIT);
@@ -23,6 +23,7 @@ console.log('PARTICLES');
 	initShaders();
 	initBuffers();
 	draw();
+	updateCount();
 
 	const tStart = new Date().getTime();
 
@@ -38,6 +39,9 @@ console.log('PARTICLES');
 		requestAnimationFrame(draw);
 	}
 
+	function updateCount() {
+		document.querySelector('h1').innerText = particleCount;
+	}
 
 	function initBuffers(){
 		vertexBuffer = gl.createBuffer();
@@ -120,4 +124,26 @@ console.log('PARTICLES');
 
 		return shader;
 	}
+
+	document.body.addEventListener('keypress', (e) => {
+		if(e.key === '1') {
+			particleCount += 1;
+		}
+		else if(e.key === '2') {
+			particleCount += 10;
+		}
+		else if(e.key === '3') {
+			particleCount += 100;
+		}
+		else if(e.key === '4') {
+			particleCount += 1000;
+		}
+		else if(e.key === '5') {
+			particleCount += 10000;
+		}
+
+		initBuffers();
+		updateCount();
+	});
 }
+
