@@ -4,7 +4,7 @@ import '../css/matrix.css';
 console.log('import?');
 console.log('MATRIX DEMO');
 
-let size = 1024;
+let size = 2;
 let inputLeft = [];
 let inputRight = [];
 let resultCpu = [];

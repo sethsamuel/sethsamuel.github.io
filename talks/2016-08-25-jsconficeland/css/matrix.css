@@ -42,7 +42,7 @@ body {
 }
 
 .inputs { 
-	justify-content: center;
+	justify-content: space-around;
 }
 
 .times {
