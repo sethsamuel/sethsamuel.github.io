@@ -8,12 +8,16 @@
   }else{
     gl_FragColor = vec4(0.0,0.0,0.0,1.0);
   }
-}</code></pre></section><section><div class="img" style="background-image:url(images/edgefinder.jpg)"></div></section><section><iframe data-src="./edgefinder.html" width="512" height="512"></iframe></section><section><h3>Particles</h3><pre><code class="glsl">gl_Position = vec4(
+}</code></pre></section><section><div class="img" style="background-image:url(images/edgefinder.jpg)"></div></section><section><iframe data-src="./edgefinder.html" width="512" height="512"></iframe></section><section><h3>Color Manipulation</h3><pre><code class="glsl">void main(void) {
+  vec4 c = texture2D(uSampler, vCoord);
+  vec3 shiftedC = vec3(c.x + uElapsed*uSpeed*0.0001, 1.0, 0.9);
+  gl_FragColor = vec4(hsv2rgb(shiftedC), 1.0);
+}</code></pre></section><section><iframe data-src="./cats.html" width="512" height="512"></iframe></section><section><h3>Particles</h3><pre><code class="glsl">gl_Position = vec4(
   sin(vPosition.x+uThreshold*6.28*vPosition.z*vPosition.z), 
   cos(vPosition.y+uThreshold*6.28*vPosition.z), 
   vPosition.z,
   1.0
-);</code></pre></section><section><iframe data-src="./particles.html" width="512" height="512"></iframe></section><section><h1>Why so powerful?</h1></section><section><h1>CPU v GPU</h1></section><section><h1>OpenCL</h1></section><section><h1>OpenGL:WebGL::OpenCL:?</h1></section><section><h1>WebCL: Coming Soon(™)</h1></section><section><h1>Compute Shaders: Coming Soon(™)</h1></section><section><h1>How could we get data out of WebGL?</h1></section><section><img src="images/aliens_pixels.jpg"/></section><section><h1><pre><code class="js">canvas.getImageData</code></pre></h1></section><section><h2>Implementation Challenges</h2><img src="images/challenges.jpg"/></section><section><h1>The high cost of serialization</h1></section><section> <h3>Matrix Muliplication</h3><pre><code class="glsl">float sum = 0.0;
+);</code></pre></section><section><iframe data-src="./particles.html" width="512" height="512"></iframe></section><section><h1>Why so powerful?</h1></section><section><h1>CPU v GPU</h1></section><section><img src="images/kindergarten.png"/></section><section><h1>OpenCL</h1></section><section><h1>OpenGL:WebGL::OpenCL:?</h1></section><section><h1>WebCL: Coming Soon(™)</h1></section><section><h1>Compute Shaders: Coming Soon(™)</h1></section><section><h1>How could we get data out of WebGL?</h1></section><section><img src="images/aliens_pixels.jpg"/></section><section><h1><pre><code class="js">canvas.getImageData</code></pre></h1></section><section><h2>Implementation Challenges</h2><img src="images/challenges.jpg"/></section><section><h1>The high cost of serialization</h1></section><section> <h3>Matrix Muliplication</h3><pre><code class="glsl">float sum = 0.0;
 for(int i = 0; i < size; i++) {
   vec4 cLeft  = texture2D(uSamplerLeft, vec2(i, vCoord.t));
   vec4 cRight = texture2D(uSamplerRight, vec2(vCoord.s, i));
