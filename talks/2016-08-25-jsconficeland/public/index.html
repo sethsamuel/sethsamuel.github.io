@@ -8,11 +8,7 @@
   }else{
     gl_FragColor = vec4(0.0,0.0,0.0,1.0);
   }
-}</code></pre></section><section><div class="img" style="background-image:url(images/edgefinder.jpg)"></div></section><section><iframe data-src="./edgefinder.html" width="512" height="512"></iframe></section><section><h3>Color Manipulation</h3><pre><code class="glsl">void main(void) {
-  vec4 c = texture2D(uSampler, vCoord);
-  vec3 shiftedC = vec3(c.x + uElapsed*uSpeed*0.0001, 1.0, 0.9);
-  gl_FragColor = vec4(hsv2rgb(shiftedC), 1.0);
-}</code></pre></section><section><iframe data-src="./cats.html" width="512" height="512"></iframe></section><section><h3>Particles</h3><pre><code class="glsl">gl_Position = vec4(
+}</code></pre></section><section><div class="img" style="background-image:url(images/edgefinder.jpg)"></div></section><section><iframe data-src="./edgefinder.html" width="512" height="512"></iframe></section><section><h3>Particles</h3><pre><code class="glsl">gl_Position = vec4(
   sin(vPosition.x+uThreshold*6.28*vPosition.z*vPosition.z), 
   cos(vPosition.y+uThreshold*6.28*vPosition.z), 
   vPosition.z,
