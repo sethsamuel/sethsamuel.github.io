@@ -4,6 +4,10 @@ import '../css/matrix.css';
 console.log('import?');
 console.log('MATRIX DEMO');
 
+if (location.search === '?preview') {
+	document.body.classList.add('preview');
+}
+
 let size = 2;
 let inputLeft = [];
 let inputRight = [];

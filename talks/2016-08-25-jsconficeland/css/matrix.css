@@ -5,6 +5,10 @@ body {
 	flex-direction: column;
 }
 
+body.preview .params, body.preview .buttons, body.preview .timers, body.preview .gpu-result {
+	display: none;
+}
+
 #root {
 	flex: 1;
 	display: flex;
