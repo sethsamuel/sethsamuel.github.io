@@ -27,6 +27,34 @@
 	margin-right: .5em;
 }
 
+.bracket-caption {
+	position: relative;
+	display: inline;
+	width: calc(3 * 3rem);
+}
+
+.bracket-caption:before {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: calc(50% - 2px);
+	background: white;
+	width: 2px;
+	height: 1rem;
+}
+
+.bracket-caption:after {
+	content: attr(data-caption);
+	position: absolute;
+	top: calc(100% + 1rem);
+	padding-top: .5rem;
+	left: 0;
+	border-top: 2px solid white;
+	width: 100%;
+	font-size: 3rem;
+}
+
+
 footer {
 	position: absolute;
 	text-align: right;
