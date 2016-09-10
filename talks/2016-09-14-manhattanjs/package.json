@@ -1,11 +1,12 @@
 {
-  "name": "2016-08-03-cascadiafest",
+  "name": "2016-09-14-manhattanjs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --profile --colors --hot",
-    "build": "NODE_ENV=production webpack -p --progress --profile --colors",
+    "build": "NODE_ENV=production webpack -p --progress --profile --colors && npm run update-preview",
+    "update-preview": "phantomjs rasterize.js public/index.html public/images/_preview.png 560px*560px",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
