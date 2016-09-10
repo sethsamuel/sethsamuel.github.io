@@ -74,8 +74,8 @@ export default class MatrixView {
 
 	render() {
 		const els = ['<table>'];
-		console.log(this.rowOffset);
-		console.log(this.highlightRow);
+		// console.log(this.rowOffset);
+		// console.log(this.highlightRow);
 		for(let row = 0; row < Math.min(this.size, this.width); row++) {
 			els.push(`<tr class='${((row+this.rowOffset) === this.highlightRow) ? "highlight" : ""}'>`);
 			for(let col = 0; col < Math.min(this.size, this.width); col++) {

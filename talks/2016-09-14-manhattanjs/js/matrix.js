@@ -4,11 +4,13 @@ import '../css/matrix.css';
 console.log('import?');
 console.log('MATRIX DEMO');
 
-if (location.search === '?preview') {
+let size = 3;
+let isPreview = (location.search === '?preview');
+if (isPreview) {
 	document.body.classList.add('preview');
+	size = 2;
 }
 
-let size = 2;
 let inputLeft = [];
 let inputRight = [];
 let resultCpu = [];
@@ -149,23 +151,40 @@ goCpu.addEventListener('click', (e) => {
 		const startTime = performance.now();
 		let productMatrix = [];
 		const timeStart = new Date();
-		for (let row = 0; row < size; row++) {
-			for(let col = 0; col < size; col++) {
-				let sum = 0;
-				for(let k = 0; k < size; k++){
-					sum += dataAtPoint(inputLeft, [k, row])*dataAtPoint(inputRight, [col, k]);
+
+		const rowStep = (size < 1280) ? size : 16;
+		let startRow = 0;
+		// const calculateRow = (startRow) => {
+			let row;
+			for(row = 0; row < size; row++) {
+				for(let col = 0; col < size; col++) {
+					let sum = 0;
+					for(let k = 0; k < size; k++){
+						sum += dataAtPoint(inputLeft, [k, row])*dataAtPoint(inputRight, [col, k]);
+					}
+					productMatrix[offsetForPoint([col, row])] = sum;
 				}
-				productMatrix[offsetForPoint([col, row])] = sum;
 			}
-		}
-		const elapsed = performance.now() - startTime;
-		document.querySelector('.cpu-time').innerText = elapsed.toFixed(2) + 'ms';
-		cpuResult.matrix = resultCpu = productMatrix;
-		document.querySelector('.spinner').classList.remove('active');
-		e.target.removeAttribute('disabled');
+			// document.querySelector('.cpu-time').innerText = `${(size - row) * size}/${size * size}`;
+			if ((row + rowStep) <= parseInt(size)) {
+				setTimeout(() => {
+					calculateRow(row);
+				}, 0);
+			} else {
+				const elapsed = performance.now() - startTime;
+				document.querySelector('.cpu-time').innerText = elapsed.toFixed(2) + 'ms';
+				cpuResult.matrix = resultCpu = productMatrix;
+				document.querySelector('.spinner').classList.remove('active');
+				e.target.removeAttribute('disabled');
+			}
+		// }
+		// calculateRow(0);
 	}, 100);
 });
 
+if (isPreview) {
+	goCpu.click();
+}
 
 const goGpu = document.querySelector('.go-gpu');
 goGpu.addEventListener('click', (e) => {

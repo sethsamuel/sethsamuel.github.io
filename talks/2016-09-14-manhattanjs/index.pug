@@ -8,7 +8,7 @@ html
 			.slides
 				section
 					section
-						h2 Arbitrary Computation on the GPU with ❤WebGL 
+						h2 Arbitrary Computation on the GPU with ❤WebGL
 						h3 Seth Samuel (NY ↝ PDX ↝ Elsewhere ↝ PDX ↝ NYC)
 						a.contact(href='http://twitter.com/sethfsamuel')
 							img(src='images/twit.png')
@@ -16,7 +16,7 @@ html
 						a.contact(href='http://github.com/sethsamuel')
 							img(src='images/github.png')
 							| sethsamuel
-					section 
+					section
 						h2 Follow along:
 						h1 sethsamuel.github.io
 				section
@@ -37,7 +37,7 @@ html
 				section
 					h3 Edge Finder
 					pre
-						code(class='glsl') 
+						code(class='glsl')
 							| if(<b>distance(pixelLeft, pixel) > uThreshold</b>) {
 							|    gl_FragColor = vec4(1.0, 0.0, 1.0, 1.0);
 							|  } else {
@@ -47,21 +47,21 @@ html
 					.img(style='background-image:url(images/edgefinder.jpg);')
 				section
 					iframe(data-src='./edgefinder.html', width=512, height=512)
-				section
-					h3 Color Manipulation
-					pre
-						code(class='glsl')
-							|   vec3 shiftedC = vec3(<b>color.r + uElapsedTime*uSpeed</b>, 1.0, 0.9);
-							|   gl_FragColor = vec4(hsv2rgb(shiftedC), 1.0);
-				section
-					iframe(data-src='./cats.html', width=512, height=512)
+				//- section
+				//- 	h3 Color Manipulation
+				//- 	pre
+				//- 		code(class='glsl')
+				//- 			|   vec3 shiftedC = vec3(<b>color.r + uElapsedTime*uSpeed</b>, 1.0, 0.9);
+				//- 			|   gl_FragColor = vec4(hsv2rgb(shiftedC), 1.0);
+				//- section
+				//- 	iframe(data-src='./cats.html', width=512, height=512)
 				section
 					h3 Particles
 					pre
 						code(class='glsl')
 							| gl_Position = vec4(
-							|   <b>sin(math)</b>, 
-							|   <b>cos(math)</b>, 
+							|   <b>sin(math)</b>,
+							|   <b>cos(math)</b>,
 							|   z,
 							|   1.0
 							| );
@@ -100,7 +100,7 @@ html
 					h1 Matrix Muliplication
 				section
 					iframe(data-src='./matrix.html?preview', width=920, height=640)
-				section 
+				section
 					h3 Matrix Muliplication
 					pre
 						code(class='glsl')
@@ -108,7 +108,7 @@ html
 							| for(int i = 0; i < size; i++) {
 							|   sum = sum + (cLeftRow[i] * cRightCol[i]);
 							| }
-							| gl_FragColor = sum;
+							| <b>gl_FragColor = sum</b>;
 				section
 					iframe(data-src='./matrix.html', width=920, height=640)
 				section
@@ -146,13 +146,13 @@ html
 				section
 					h1 Actual Applications
 				section
-					h2 
+					h2
 						strike Hash collision
 				section
-					h2 
+					h2
 						strike Bitcoin mining
 				section
-					h2 
+					h2
 						strike Media encoding
 				section
 					h2 Machine learning?
