@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --profile --colors --hot",
     "build": "NODE_ENV=production webpack -p --progress --profile --colors && npm run update-preview",
-    "update-preview": "phantomjs rasterize.js public/index.html public/images/_preview.png 560px*560px",
+    "update-preview": "phantomjs rasterize.js public/index.html public/images/preview.png 560px*560px",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
