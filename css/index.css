@@ -59,7 +59,7 @@ h1{
 
 .talk {
 	display: block;
-	flex: 1;
+	flex: 1 0 280px;
 	color: inherit;
 	text-decoration: none;
 	text-align: center;
