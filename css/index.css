@@ -11,17 +11,11 @@ body {
 	padding: 0;
 	color: #333;
 	background: #fcfdff;
-	display: flex;
-	flex-direction: column;
-	width: 100vw;
-	height: 100vh;
-	position: absolute;
+	padding-bottom: 2rem;
 }
 
 body > :first-child {
-	flex: 1;
 	padding: 1rem;
-	overflow: auto;
 	flex-direction: row;
 }
 
@@ -90,6 +84,10 @@ footer {
 	padding: .5rem;
 	flex-direction: row;
 	justify-content: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 footer .content {
