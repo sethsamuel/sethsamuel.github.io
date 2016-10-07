@@ -1,0 +1,14 @@
+input {
+	transform: rotateZ(90deg);
+	transform-origin: left;
+	width: 512px;
+	height: 12px;
+	position: absolute;
+	background: white;
+	left: 15px;
+	top: -6px;
+}
+
+canvas {
+	margin-left: 32px;
+}

@@ -1,0 +1,71 @@
+.reveal section img {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+.reveal section .img {	
+	width: 100%;
+	padding-top: 50%;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.reveal pre code {
+	text-transform: initial !important;
+}
+
+.reveal a.contact {
+	display: block;
+}
+
+.reveal a.contact img {
+	display: inline-block;
+	width: 1em;
+	vertical-align: middle;
+	margin-right: .5em;
+}
+
+.bracket-caption {
+	position: relative;
+	display: inline;
+	width: calc(3 * 3rem);
+}
+
+.bracket-caption:before {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: calc(50% - 2px);
+	background: white;
+	width: 2px;
+	height: 1rem;
+}
+
+.bracket-caption:after {
+	content: attr(data-caption);
+	position: absolute;
+	top: calc(100% + 1rem);
+	padding-top: .5rem;
+	left: 0;
+	border-top: 2px solid white;
+	width: 100%;
+	font-size: 3rem;
+}
+
+
+footer {
+	position: absolute;
+	text-align: right;
+	font-size: 1em;
+	bottom: .5em;
+	left: .5em;
+	opacity: 0;
+	color: white;
+	transition: opacity 0.5s ease;
+}
+
+footer.visible {
+	opacity: 0.8;
+}

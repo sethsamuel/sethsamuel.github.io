@@ -1,0 +1,25 @@
+html
+	head
+		title Matrix Multiplication Demo
+	body
+		#root
+			.params
+				input.size(type='range', min=0, max=1024, value=2, step=16)
+				input.size-value(type='text')
+			.inputs
+				.input-left
+				//- .times &middot;
+				.input-right
+			.buttons
+				.button
+					button.go-cpu Go CPU
+				.spinner
+				.button
+					button.go-gpu Go GPU
+			.timers
+				.cpu-time &nbsp;
+				.gpu-time &nbsp;
+			.results
+				.cpu-result.matrix
+				.gpu-result.matrix
+		canvas

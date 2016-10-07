@@ -1,0 +1,126 @@
+body {
+	background: white;
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+}
+
+body.preview .params, body.preview .buttons, body.preview .timers, body.preview .gpu-result {
+	display: none;
+}
+
+#root {
+	flex: 1;
+	display: flex;
+	width: 100%;
+	padding: 1em;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	align-items: stretch;
+}
+
+.inputs, .buttons, .results, .timers, .params {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.params { 
+	margin: 1rem 3rem 0;
+}
+
+.params .size {
+	flex: 1;
+	height: 1em;
+}
+
+.params .size-value{
+	font-size: 24px;
+	width: 4em;
+	font-weight: bold;
+	text-align: center;
+	padding: .25em .5em;
+	margin-left: 1em;
+}
+
+.inputs { 
+	justify-content: space-around;
+}
+
+.times {
+	font-size: 48px;
+	margin: 0 1em;
+}
+
+.button {
+	flex: 1;
+	text-align: center;
+}
+
+.spinner {
+	width: .5em;
+	height: 3em;
+	background: #333;
+	visibility: hidden;
+}
+
+.spinner.active {
+	visibility: visible;
+	animation: spin 2s infinite linear;
+}
+
+@-webkit-keyframes spin {
+	from { transform: rotateZ(0deg); }
+	to { transform: rotateZ(360deg); }
+}
+
+.timers {
+	font-size: 32px;
+}
+
+.timers div {
+	flex: 1;
+	text-align: center;
+}
+
+.matrix {
+	width: 224px;
+}
+
+.matrix table {
+	border-collapse: collapse;
+}
+
+.matrix td {
+	font-family: monospace;
+	font-size: 24px;
+	text-align: center;
+	padding: .5em;
+	width: 2em;
+	border: 2px solid #333;
+}
+
+
+button {
+	border: none;
+	outline: none;
+	background: #8DA67C;
+	color: white;
+	padding: 1em 2em;
+	font-size: 22px;
+}
+
+button:disabled {
+	background: #ccc;
+}
+
+.results {
+	margin-bottom: 1rem;
+}
+
+canvas {
+	display: none;
+	position: absolute;
+}
