@@ -30,6 +30,10 @@ body {
 	max-height: 400px;
 }
 
+.reveal section img.fullslide {
+	max-height: 540px;
+}
+
 .reveal section .img {
 	width: 100%;
 	padding-top: 50%;
