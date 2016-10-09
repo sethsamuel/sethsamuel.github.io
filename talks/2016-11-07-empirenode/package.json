@@ -1,0 +1,33 @@
+{
+  "name": "2016-09-14-manhattanjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --profile --colors --hot",
+    "build": "NODE_ENV=production webpack -p --progress --profile --colors && npm run update-preview",
+    "update-preview": "phantomjs rasterize.js public/index.html public/images/preview.png 560px*560px",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "6.10.4",
+    "babel-loader": "6.2.4",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-stage-0": "6.5.0",
+    "copy-webpack-plugin": "3.0.1",
+    "css-loader": "0.23.1",
+    "file-loader": "0.9.0",
+    "highlight.js": "9.5.0",
+    "html-webpack-plugin": "2.22.0",
+    "lodash": "4.13.1",
+    "pug-html-loader": "1.0.8",
+    "reveal.js": "3.3.0",
+    "style-loader": "0.13.1",
+    "url-loader": "0.5.7",
+    "webpack": "1.13.1",
+    "webpack-dev-server": "1.14.1"
+  }
+}
