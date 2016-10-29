@@ -10,10 +10,10 @@ html
 					section
 						h2 ❤WebAssembly and the Future Of Javascript
 						h3 Seth Samuel (NY ↝ PDX ↝ Elsewhere ↝ PDX ↝ NYC)
-						a.contact(href='http://twitter.com/sethfsamuel')
+						a.contact.twitter(href='http://twitter.com/sethfsamuel')
 							img(src='images/twit.png')
 							| @sethfsamuel
-						a.contact(href='http://github.com/sethsamuel')
+						a.contact.github(href='http://github.com/sethsamuel')
 							img(src='images/github.png')
 							| sethsamuel
 					section
@@ -32,10 +32,6 @@ html
 					h3 Ada Lovelace
 					img(src='images/lovelace.jpg')
 				section
-					h2 1945
-					h3 Alan Turing
-					img(src='images/turing.jpg')
-				section
 					h2 1952
 					h3 Grace Hopper
 					img(src='images/hopper.jpg')
@@ -45,24 +41,11 @@ html
 					img(src='images/lee.jpg')
 				section
 					h2 1995
-					h3 Hackers
-					img(src='images/hackers.jpg')
-				section
-					h2 1995
-					h3 The Net
-					img(src='images/thenet.jpg')
-				section
-					h2 1995
 					h3 Brendan Eich
 					img(src='images/eich.jpg')
 				section
 					h2 2000-2008
 					h3 Shit Happened
-					img(src='images/shit.jpg')
-				section
-					h2 2001
-					h3 Swordfish
-					img(src='images/swordfish.jpg')
 				section
 					h2 2009
 					h3 Ryan Dahl
@@ -90,19 +73,45 @@ html
 				section
 					img.fullslide(src='images/tacoma_narrows.gif')
 				section
+					h2 Language abstractions
+					ol
+						li Electrons
+						li Assembly
+						li Low level languages (C, Rust)
+						li High level languages (Javascript, Python, Ruby)
+						li Visual languages (Unity, LEGO)
+				section
 					h2 Higher level ↝ less efficient <sup>*</sup>
-				section
-					h2 Assembly is Machine Language
-				section
-					h2 Javascript is Far From Assembly
 				section
 					h2 asm.js
 				section
-					h2 &lt;asm.js example&gt;
+					pre
+						code(class='javascript')
+							| function Module() {
+							|   "use asm";
+							|   function add(x, y) {
+							|     x = x | 0;
+							|     y = y | 0;
+							|     return x + y;
+							|   }
+							|   return { add: add };
+							| }
 				section
 					h2 WebAssembly AST
 				section
-					h2 &lt;AST example&gt;
+					pre
+						code(class='lisp')
+							| (module
+							|   (memory 256 256)
+							|   (export "memory" memory)
+							|   (export "add" $add)
+							|   (func $add (param $0 i32) (param $1 i32) (result i32)
+							|     (i32.add
+							|       (get_local $0)
+							|       (get_local $1)
+							|     )
+							|   )
+							| )
 				section
 					h2 WAST is a shared target for compilers
 				section
@@ -110,11 +119,22 @@ html
 				section
 					h2 Demo
 				section
+					h2 Benefits
+				section
+					h2 No more npm building
+				section
+					h2 Compiled system langauges in the browser
+				section
+					h2 Pick the right tool for the job
+				section
+					h2 Learn more/Do more
+					h3 https://github.com/WebAssembly/design
+				section
 					h1 Thanks!
-					a.contact(href='http://twitter.com/sethfsamuel')
+					a.contact.twitter(href='http://twitter.com/sethfsamuel')
 						img(src='images/twit.png')
 						| @sethfsamuel
-					a.contact(href='http://github.com/sethsamuel')
+					a.contact.github(href='http://github.com/sethsamuel')
 						img(src='images/github.png')
 						| sethsamuel
 			footer

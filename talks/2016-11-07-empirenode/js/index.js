@@ -3,7 +3,7 @@ var RevealCSS = require('reveal.js/css/reveal.css');
 var RevealCSS = require('reveal.js/css/theme/sky.css');
 
 var highlightJs = require('highlight.js');
-var highlightJsCss = require('highlight.js/styles/default.css');
+var highlightJsCss = require('highlight.js/styles/tomorrow.css');
 highlightJs.initHighlightingOnLoad();
 
 require('../css/index.css');

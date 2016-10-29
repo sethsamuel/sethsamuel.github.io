@@ -44,10 +44,16 @@ body {
 
 .reveal pre code {
 	text-transform: initial !important;
+	font-size: 1.5rem;
+	line-height: 1.2;
 }
 
 .reveal a.contact {
 	display: block;
+}
+
+.reveal a.contact:hover, .reveal a.contact:hover img {
+	box-shadow: none;
 }
 
 .reveal a.contact img {
@@ -55,6 +61,10 @@ body {
 	width: 1em;
 	vertical-align: middle;
 	margin-right: .5em;
+}
+
+.reveal a.contact.twitter img {
+	margin-right: .4em;
 }
 
 .bracket-caption {
