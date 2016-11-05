@@ -20,7 +20,10 @@ html
 						h2 Follow along:
 						h1 sethsamuel.github.io
 				section
+					img(src='images/business.jpg')
+				section
 					h1 Disclaimer
+						span(class='fragment') (s)
 				section
 					h1 What is WebAssembly?
 				section
@@ -34,6 +37,10 @@ html
 					h3 Ada Lovelace
 					img(src='images/lovelace.jpg')
 				section
+					h2 1945
+					h3 Alan Turing
+					img(src='images/turing.jpg')
+				section
 					h2 1952
 					h3 Grace Hopper
 					img(src='images/hopper.jpg')
@@ -46,28 +53,17 @@ html
 					h3 Brendan Eich
 					img(src='images/eich.jpg')
 				section
-					h2 2000-2008
-					h3 Shit Happened
-				section
 					h2 2009
 					h3 Ryan Dahl
 					img(src='images/nodejs.png')
-				section.good-shit
-					h2 2010-2016
-					h3 More Shit (the Good Kind™)
-					img.fragment(src='images/npm.svg')
-					img.fragment(src='images/grunt.png')
-					img.fragment(src='images/gulp.png')
-					img.fragment(src='images/browserify.png')
-					img.fragment(src='images/bower.png')
-					img.fragment(src='images/react.svg')
 				section
 					h2 Now
-					h1 A Universal Runtime
+					h3 You
+					img(src='')
 				section
 					h1 Assembly
 				section
-					h2 Programming languages are a bridge between human thought and machine processing.
+					h2 Programming languages are a bridge between human thought<br> and machine processing.
 				section
 					img.fullslide(src='images/brooklyn_bridge.jpg')
 				section
@@ -75,20 +71,40 @@ html
 				section
 					img.fullslide(src='images/tacoma_narrows.gif')
 				section
-					h2 Language abstractions
-					ol
-						li Electrons
-						li Machine code
-						li Assembly
-						li Low(er) level languages (C, Rust)
-						li High(er) level languages (Javascript, Python, Ruby)
-						li Visual languages (Unity, LEGO)
+					h1 Programming abstractions
+				section
+					h2 Electrons
+					img(src='images/electron.png')
+				section
+					h2 Machine code
+					pre
+						code
+							| 1100101010101101010
+				section
+					h2 Assembly
+					pre
+						code
+							| mov eax, 45
+							| mov ebx, 55
+							| add eax, ebx
+							| push eax
+				section
+					h2 Grace Hopper
+					img(src='images/hopper.jpg')
+				section
+					h2 Low(er) level languages
+					h3 (COBOL, C, Rust)
+				section
+					h2 High(er) level languages
+					h3 (Javascript, Python, Ruby)
+				section
+					h2 Visual languages
+					h3 (Unity, LEGO)
 				section
 					h2 Higher level ↝ less efficient <sup>*</sup>
 				section
 					h2 asm.js
-				section
-					pre
+					pre(class='fragment')
 						code(class='javascript')
 							| function Module() {
 							|   "use asm";
@@ -100,12 +116,16 @@ html
 							|   return { add: add };
 							| }
 				section
-					h2 WebAssembly AST
+					h2 WebAssembly Abract Syntax Tree (WAST)
 				section
 					h2 WAST is a shared target for compilers
 				section
-					h2 Browsers (and node) can transform WAST into Assembly
+					h2 Learn more
+					h3 Mariko Kosaka - How to be* a compiler 
 				section
+					h2 Browsers (and node) can efficiently transform WAST into Assembly
+				section
+					h3 WAST
 					pre
 						code(class='lisp')
 							| (module
@@ -124,14 +144,11 @@ html
 				section
 					h2 Benefits
 				section
-					h2 No more npm building
+					h2 Less npm postinstall building
 				section
 					h2 Compiled system langauges in the browser
 				section
 					h2 Pick the right tool for the job
-				section
-					h2 Learn more/Do more
-					h3 Mariko Kosaka - How to be* a compiler 
 				section
 					h2 Learn more/Do more
 					h3 https://github.com/WebAssembly/design
