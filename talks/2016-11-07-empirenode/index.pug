@@ -134,21 +134,6 @@ html
 				section
 					h2 Browsers (and node) can efficiently transform WAST into Assembly
 				section
-					h3 WAST
-					pre
-						code(class='lisp')
-							| (module
-							|   (memory 256 256)
-							|   (export "memory" memory)
-							|   (export "add" $add)
-							|   (func $add (param $0 i32) (param $1 i32) (result i32)
-							|     (i32.add
-							|       (get_local $0)
-							|       (get_local $1)
-							|     )
-							|   )
-							| )
-				section
 					h2 Demo
 				section
 					h2 Benefits
