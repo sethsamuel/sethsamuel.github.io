@@ -56,10 +56,10 @@ html
 					h2 2009
 					h3 Ryan Dahl
 					img(src='images/nodejs.png')
-				section
-					h2 Now
-					h3 You
-					img(src='')
+				//- section
+				//- 	h2 Now
+				//- 	h3 You
+				//- 	img(src='')
 				section
 					h1 Assembly
 				section
@@ -71,7 +71,7 @@ html
 				section
 					img.fullslide(src='images/tacoma_narrows.gif')
 				section
-					h1 Programming abstractions
+					h1 Why do we need abstractions?
 				section
 					h2 Electrons
 					img(src='images/electron.png')
@@ -93,13 +93,22 @@ html
 					img(src='images/hopper.jpg')
 				section
 					h2 Low(er) level languages
-					h3 (COBOL, C, Rust)
+					pre
+						code
+							| int *ptr_one;
+							| ptr_one = (int *)malloc(sizeof(int));
+							| free(ptr_one);
 				section
 					h2 High(er) level languages
-					h3 (Javascript, Python, Ruby)
+					pre
+						code
+							| var s = 1;
+							| s = ["Hello"];
+							| s[2] = "Empire";
+							| s["a"] = "Node";
 				section
 					h2 Visual languages
-					h3 (Unity, LEGO)
+					img(src='images/unreal.jpg')
 				section
 					h2 Higher level ↝ less efficient <sup>*</sup>
 				section
