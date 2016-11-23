@@ -1,0 +1,194 @@
+html
+	head
+		title WebGL
+		meta(charset='utf=8')
+		meta(http-equiv='Content-Type' content='text/html; charset=UTF-8')
+	body
+		.reveal
+			.slides
+				section
+					section
+						h2 ❤WebGL For More Than Graphics
+						h3 Seth Samuel (NY ↝ PDX ↝ Elsewhere ↝ PDX ↝ NYC)
+						a.contact(href='http://twitter.com/sethfsamuel')
+							img(src='images/twit.png')
+							| @sethfsamuel
+						a.contact(href='http://github.com/sethsamuel')
+							img(src='images/github.png')
+							| sethsamuel
+					section
+						h2 Follow along:
+						h1 sethsamuel.github.io
+				section
+					h1 Disclaimer
+				section
+					h1 What is WebGL?
+				section
+					img(src='images/webgl-architecture.svg')
+				section
+					h3 Shaders
+					img(src='images/shader-pipeline.svg')
+				section
+					h3 Simple Gradient
+					pre
+						code(class='glsl') gl_FragColor = vec4(s, t, 0, 1);
+				section
+					iframe(data-src='./gradient.html', width=512, height=512)
+				section
+					h3 Edge Finder
+					pre
+						code(class='glsl')
+							| if(<b>distance(pixelLeft, pixel) > uThreshold</b>) {
+							|    gl_FragColor = vec4(1.0, 0.0, 1.0, 1.0);
+							|  } else {
+							|    gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+							|  }
+				section
+					.img(style='background-image:url(images/edgefinder.jpg);')
+				section
+					iframe(data-src='./edgefinder.html', width=512, height=512)
+				//- section
+				//- 	h3 Color Manipulation
+				//- 	pre
+				//- 		code(class='glsl')
+				//- 			|   vec3 shiftedC = vec3(<b>color.r + uElapsedTime*uSpeed</b>, 1.0, 0.9);
+				//- 			|   gl_FragColor = vec4(hsv2rgb(shiftedC), 1.0);
+				//- section
+				//- 	iframe(data-src='./cats.html', width=512, height=512)
+				section
+					h3 Particles
+					pre
+						code(class='glsl')
+							| gl_Position = vec4(
+							|   <b>sin(math)</b>,
+							|   <b>cos(math)</b>,
+							|   z,
+							|   1.0
+							| );
+				section
+					iframe(data-src='./particles.html', width=512, height=512)
+				section
+					h1 Why so powerful?
+				section
+					h1 CPU v GPU
+				section
+					img(src='images/kindergarten.png')
+				section
+					h1 OpenCL
+				section
+					h1 OpenGL:WebGL::OpenCL:?
+				section
+					h1 WebCL: Coming Soon(™)
+				section
+					h1 Compute Shaders: Coming Soon(™)
+				section
+					h1 How could we get data out of WebGL?
+				section
+					h1 PIXELS
+				section
+					h1(style="margin: 0 -1rem") rgba(<span class='bracket-caption' data-caption='8 bits'>255</span>, <span class='bracket-caption' data-caption='8 bits'>255</span>, <span class='bracket-caption' data-caption='8 bits'>255</span>, <span class='bracket-caption' data-caption='8 bits'>255</span>)
+				section
+					h1
+						pre
+							code(class='js') canvas.getImageData
+				section
+					h2 Implementation Challenges
+					img(src='images/challenges.jpg')
+				section
+					h1 The high cost of serialization
+				section
+					h1 Matrix Muliplication
+				section
+					iframe(data-src='./matrix.html?preview', width=920, height=640)
+				section
+					h3 Matrix Muliplication
+					pre
+						code(class='glsl')
+							| float sum = 0.0;
+							| for(int i = 0; i < size; i++) {
+							|   sum = sum + (cLeftRow[i] * cRightCol[i]);
+							| }
+							| <b>gl_FragColor = sum</b>;
+				section
+					iframe(data-src='./matrix.html', width=920, height=640)
+				section
+					img(src='images/whoa.gif')
+				section
+					h1 Why?
+				section
+					h1(style='text-transform:none;') O(n) < O(n<sup>3</sup>)
+				section
+					h2(style='text-transform:none;') n ∈ [0, 5]
+					img(style='width:70%;', src='images/on_1.png')
+				section
+					h2(style='text-transform:none;') n ∈ [0, 10]
+					img(style='width:70%;', src='images/on_2.png')
+				section
+					h2(style='text-transform:none;') n ∈ [0, 100]
+					img(style='width:70%;', src='images/on_3.png')
+				section
+					h2(style='text-transform:none;') n ∈ [0, 1024]
+					img(style='width:70%;', src='images/on_4.png')
+				section
+					h1 Potential Applications
+				section
+					h2 Hash collision
+				section
+					h2 Bitcoin mining
+				section
+					h2 Media encoding
+				section
+					h2 Machine learning
+				section
+					h2 Signal analysis/processing
+				section
+					h2 Protein folding
+				section
+					h1 Actual Applications
+				section
+					h2
+						strike Hash collision
+				section
+					h2
+						strike Bitcoin mining
+				section
+					h2
+						strike Media encoding
+				section
+					h2 Machine learning?
+				section
+					h2 Signal analysis/processing?
+				section
+					h2 Protein folding?
+				section
+					h2 Implementation Blockers
+					img(src='images/more_challenges.jpg')
+				section
+					h2 No bit operations
+				section
+					h2 Unresponsive window
+				section
+					h2 OS level timeouts
+				section
+					h1 What do we need to make it work?
+				section
+					h2 Newer shader glsl version (1.3)
+				section
+					h2 Canvas/WebGL in web worker
+				section
+					h2 Try It out
+					h3 https://github.com/turbo/js
+				section
+					h2 Summary
+					img(src='images/sumup.jpg')
+				section
+					h1 Danke schön!
+					a.contact(href='http://twitter.com/sethfsamuel')
+						img(src='images/twit.png')
+						| @sethfsamuel
+					a.contact(href='http://github.com/sethsamuel')
+						img(src='images/github.png')
+						| sethsamuel
+			footer
+				a.contact(href='http://twitter.com/sethfsamuel')
+					| @sethfsamuel
