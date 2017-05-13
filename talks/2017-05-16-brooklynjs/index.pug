@@ -34,6 +34,13 @@ html
 					h3 Frame buffers
 					img(src='images/framebuffer.svg')
 				section
+					h3 Conway's Game of Life
+					ul
+						li Any live cell with fewer than two live neighbours dies.
+						li Any live cell with two or three live neighbours lives on to the next generation.
+						li Any live cell with more than three live neighbours dies.
+						li Any dead cell with exactly three live neighbours becomes a live cell.
+				section
 					iframe(data-src='./gol-simple', width=512, height=512)
 				section
 					h3 Rendering
