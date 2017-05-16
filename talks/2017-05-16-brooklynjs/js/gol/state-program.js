@@ -76,16 +76,17 @@ export default class StateProgram {
 
 	}
 
-	incrementState({mousePosition}) {
+	incrementState({mousePosition}={}) {
 		const gl = this.gl;
 		gl.useProgram(this.shaderProgram);
 
 		gl.uniform1i(this.uShouldUpdate, 1);
 
+		const uMousePosition = gl.getUniformLocation(this.shaderProgram, "uMousePosition");
 		if (mousePosition && mousePosition.length == 2) {
-			const uMousePosition = gl.getUniformLocation(this.shaderProgram, "uMousePosition");
-			console.log(mousePosition);
 			gl.uniform2f(uMousePosition, mousePosition[0], mousePosition[1]);
+		} else {
+			gl.uniform2f(uMousePosition, -10, -10);
 		}
 
 		gl.bindFramebuffer(gl.FRAMEBUFFER, this.frameBuffer);
