@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="956px" height="253px" viewBox="0 0 956 253" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="200" height="150"></rect>
+        <rect id="path-2" x="252" y="0" width="200" height="150"></rect>
+        <rect id="path-3" x="504" y="0" width="200" height="150"></rect>
+        <rect id="path-4" x="756" y="0" width="200" height="150"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Frame-buffer" transform="translate(-35.000000, -384.000000)">
+            <g id="Group" transform="translate(35.000000, 384.000000)">
+                <g id="Rectangle-1">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <rect stroke="#FFFFFF" stroke-width="1" x="0.5" y="0.5" width="199" height="149"></rect>
+                </g>
+                <text id="Data" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="32" font-weight="bold" fill="#000000">
+                    <tspan x="64.144" y="84">Data</tspan>
+                </text>
+                <g id="Rectangle-1">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <rect stroke="#FFFFFF" stroke-width="1" x="252.5" y="0.5" width="199" height="149"></rect>
+                </g>
+                <text id="Vertex-shader" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="32" font-weight="bold" fill="#000000">
+                    <tspan x="303.984" y="67">Vertex </tspan>
+                    <tspan x="299.552" y="105">shader</tspan>
+                </text>
+                <g id="Rectangle-1">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    <rect stroke="#FFFFFF" stroke-width="1" x="504.5" y="0.5" width="199" height="149"></rect>
+                </g>
+                <text id="Fragment-shader" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="32" font-weight="bold" fill="#000000">
+                    <tspan x="530.528" y="67">Fragment </tspan>
+                    <tspan x="551.552" y="105">shader</tspan>
+                </text>
+                <g id="Rectangle-1">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                    <rect stroke="#FFFFFF" stroke-width="1" x="756.5" y="0.5" width="199" height="149"></rect>
+                </g>
+                <text id="Framebuffer!" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="32" font-weight="bold" fill="#000000">
+                    <tspan x="758.128" y="110">Framebuffer!</tspan>
+                </text>
+                <text id="Graphics!" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="32" font-weight="bold" text-decoration="line-through" fill="#000000">
+                    <tspan x="782.832" y="67">Graphics!</tspan>
+                </text>
+                <path d="M204.5,74.5 L243.5,74.5" id="Line" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+                <path id="Line-decoration-1" d="M243.5,74.5 L232.7,71.5 L232.7,77.5 L243.5,74.5 Z" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+                <path d="M455.5,77.5 L494.5,77.5" id="Line" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+                <path id="Line-decoration-1" d="M494.5,77.5 L483.7,74.5 L483.7,80.5 L494.5,77.5 Z" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+                <path d="M707.5,76.5 L746.5,76.5" id="Line" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+                <path id="Line-decoration-1" d="M746.5,76.5 L735.7,73.5 L735.7,79.5 L746.5,76.5 Z" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+                <path d="M857.33985,172.592316 C857.33985,172.592316 624.152292,250.102204 477,250.102204 C329.847708,250.102204 187.986325,211.34726 150.253003,182.980594" id="Line" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+                <path id="Line-decoration-1" d="M150.253003,182.980594 L157.082965,191.868317 L160.688386,187.072388 L150.253003,182.980594 Z" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>
