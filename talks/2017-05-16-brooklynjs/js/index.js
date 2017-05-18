@@ -9,6 +9,7 @@ highlightJs.initHighlightingOnLoad();
 require('../css/index.css');
 
 Reveal.initialize({
+	center: false,
 	viewDistance: 2
 });
 
