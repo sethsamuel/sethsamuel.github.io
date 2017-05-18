@@ -6,6 +6,7 @@ export default class StateProgram {
 		this.gl = gl;
 		this.shaderProgram = shaderProgram;
 		this.currentState = 0;
+		this.iteration = 0;
 
 		// INITIALIZE BUFFERS
 		this.vertexBuffer = gl.createBuffer();
@@ -29,6 +30,7 @@ export default class StateProgram {
 		gl.uniform1f(uWidth, gl.canvas.width);
 
 		this.uShouldUpdate = gl.getUniformLocation(shaderProgram, "uShouldUpdate");
+		this.uIteration = gl.getUniformLocation(shaderProgram, "uIteration");
 
 		this.tTexture0 = createTexture();
 		this.tTexture1 = createTexture();
@@ -81,6 +83,8 @@ export default class StateProgram {
 		gl.useProgram(this.shaderProgram);
 
 		gl.uniform1i(this.uShouldUpdate, 1);
+		gl.uniform1i(this.uIteration, this.iteration);
+		this.iteration++;
 
 		const uMousePosition = gl.getUniformLocation(this.shaderProgram, "uMousePosition");
 		if (mousePosition && mousePosition.length == 2) {
