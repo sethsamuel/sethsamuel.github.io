@@ -13,12 +13,13 @@ const Identity2D = {
 	fragmentSource: `#version 300 es
 		precision highp float;
 		uniform sampler2D uSampler;
+		uniform float uScale;
 		in vec2 vTexturePosition;
 		in vec2 vPosition;
 		out vec4 fragmentColor;
 
 		void main(void) {
-			fragmentColor = texture(uSampler, vTexturePosition);
+			fragmentColor = texture(uSampler, vTexturePosition/uScale);
 		}
 	`
 };

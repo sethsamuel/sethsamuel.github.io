@@ -1,4 +1,4 @@
-export function createProgram(vertexSource, fragmentSource) {
+export function createProgram(vertexSource, fragmentSource, scale = 1) {
 	// GLOBALS
 	const body = document.body;
 	const canvas = document.querySelector('canvas');
@@ -7,7 +7,7 @@ export function createProgram(vertexSource, fragmentSource) {
 
 	// BEGIN WINDOW SIZING
 	function resize() {
-		const size = Math.pow(2,Math.floor(Math.log2(Math.min(window.innerWidth, window.innerHeight))))*2;
+		const size = Math.pow(2,Math.floor(Math.log2(Math.min(window.innerWidth, window.innerHeight))))*2*scale;
 		// const size = 256;
 		canvas.width = size;
 		canvas.height = size;
@@ -84,7 +84,9 @@ export function createTexture() {
 	gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
 	gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
 	gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT);
+	// gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
 	gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT);
+	// gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
 	gl.bindTexture(gl.TEXTURE_2D, null);
 	return tTexture;
 }

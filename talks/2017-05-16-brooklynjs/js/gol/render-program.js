@@ -1,8 +1,8 @@
 import {createProgram, createTexture} from './webgl';
 
 export default class RenderProgram {
-	constructor({shaderSource}) {
-		let {gl, shaderProgram} = createProgram(shaderSource.vertexSource, shaderSource.fragmentSource);
+	constructor({shaderSource, scale = 1}) {
+		let {gl, shaderProgram} = createProgram(shaderSource.vertexSource, shaderSource.fragmentSource, scale);
 		this.gl = gl;
 		this.shaderProgram = shaderProgram;
 		this.currentState = 0;
@@ -30,11 +30,13 @@ export default class RenderProgram {
 
 	}
 
-	draw(stateTexture) {
+	draw(stateTexture, predraw = ()=>{}) {
 		const gl = this.gl;
 
 		gl.useProgram(this.shaderProgram);
-
+		const uScale = gl.getUniformLocation(this.shaderProgram, "uScale");
+		gl.uniform1f(uScale, 1);
+		predraw();
 		gl.bindTexture(gl.TEXTURE_2D, stateTexture);
 		gl.bindBuffer(gl.ARRAY_BUFFER, this.vertexBuffer);
 		gl.drawArrays(gl.TRIANGLE_STRIP, 0, this.vertices.length / 3);

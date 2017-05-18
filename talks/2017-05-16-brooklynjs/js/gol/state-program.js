@@ -1,8 +1,8 @@
 import {createProgram, createTexture} from './webgl';
 
 export default class StateProgram {
-	constructor({shaderSource}) {
-		let {gl, shaderProgram} = createProgram(shaderSource.vertexSource, shaderSource.fragmentSource);
+	constructor({shaderSource, scale = 1}) {
+		let {gl, shaderProgram} = createProgram(shaderSource.vertexSource, shaderSource.fragmentSource, scale);
 		this.gl = gl;
 		this.shaderProgram = shaderProgram;
 		this.currentState = 0;
