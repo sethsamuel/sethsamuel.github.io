@@ -67,12 +67,33 @@ console.timeEnd('Init');
 
 let flip = 0;
 
+var isPaused = true;
 function draw() {
-	golStateProgram.incrementState({mousePosition});
+	// gl.uniform2f(uMousePosition, mousePosition[0], mousePosition[1]);
+
+	// golStateProgram.drawState();
+
 
 	golRenderProgram.draw(golStateProgram.stateTexture());
 
-  requestAnimationFrame(draw);
+  // setTimeout(draw, 100);
+	if (!isPaused) {
+		golStateProgram.incrementState({mousePosition});
+		requestAnimationFrame(draw);
+	}
 }
 requestAnimationFrame(draw);
 // END DRAW LOOP
+
+gl.canvas.addEventListener('click', evt => {
+	golStateProgram.incrementState();
+	draw();
+});
+document.addEventListener('keypress', evt => {
+	console.log(evt);
+	if (evt.key == 'p') {
+		isPaused = !isPaused;
+	}
+	draw();
+});
+
